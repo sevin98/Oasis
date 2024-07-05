@@ -1,0 +1,31 @@
+:root {
+  /* 색상지정 */
+  --main-color: #e9f4ff;
+
+  --gray100-color: #f6f7f7;
+  --gray200-color: #d4d5d8;
+  --gray600-color: #6b6e76;
+  --gray700-color: #52555b;
+
+  /* typograpy 지정 = fonts-size + line-height */
+  --xl-pre-font: 700 20px/28px Gowun Batang;
+  --lg-pre-font: 700 18px/28px Gowun Batang;
+  --base-pre-font: 700 16px/24px Gowun Batang;
+  --sm-pre-font: 700 14px/20px Gowun Batang;
+  --xs-pre-font: 700 12px/14px Gowun Batang;
+  --xxs-pre-font: 700 10px/12px Gowun Batang;
+
+  /* gap, radius 변수 지정 */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+}

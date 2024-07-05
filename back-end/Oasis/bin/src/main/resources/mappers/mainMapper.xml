@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.oasis.model.dao.MainDao">
+
+	<!-- 지도 api에 넘길 데이터 조회 -->
+	<select id="selectMapDatas" resultType="MainReferenceDto">
+		SELECT B.BOARD_ID, B.TITLE, MAX(B.LOCATION_DETAIL) as LOCATION_DETAIL, MAX(I.IMAGE_PATH) AS IMAGE_PATH
+		FROM BOARD AS B
+		JOIN IMAGE AS I
+		ON B.BOARD_ID = I.BOARD_ID
+		WHERE B.LOCATION_DETAIL IN (SELECT B.LOCATION_DETAIL
+		FROM BOARD AS B
+		JOIN IMAGE AS I
+		ON B.BOARD_ID = I.BOARD_ID
+		GROUP BY B.LOCATION_DETAIL
+		ORDER BY SUM(B.VIEW_CNT) DESC)
+		GROUP BY B.BOARD_ID
+		ORDER BY B.LOCATION_DETAIL;
+	</select>
+	
+	<!-- 인기 많은 장소 top3 조회 -->
+	<select id="selectTop3PopularDatas" resultType="MainReferenceDto">
+		SELECT B.BOARD_ID, MAX(B.LOCATION_DETAIL) as LOCATION_DETAIL, MAX(I.IMAGE_PATH) AS IMAGE_PATH, view_cnt
+		FROM BOARD AS B
+		LEFT JOIN IMAGE AS I
+		ON B.BOARD_ID = I.BOARD_ID
+		WHERE B.LOCATION_DETAIL IN (SELECT * FROM (SELECT B.LOCATION_DETAIL
+		FROM BOARD AS B
+		JOIN IMAGE AS I
+		ON B.BOARD_ID = I.BOARD_ID
+		GROUP BY B.LOCATION_DETAIL
+		ORDER BY SUM(B.VIEW_CNT) DESC LIMIT 3) AS T)
+		GROUP BY B.BOARD_ID
+		ORDER BY B.LOCATION_DETAIL;
+	</select>
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.oasis.model.dao.BoardDao">
+
+	<!-- 검색기능 -->
+	<select id="search"  resultType="Board" parameterType="SearchCondition">
+		SELECT *
+		FROM board
+		<!-- 동적쿼리(검색 조건) -->
+		<if test="keyword != 'none'">
+			WHERE ${content} LIKE concat('%', #{keyword}, '%') OR ${title} LIKE concat('%', #{keyword}, '%') OR ${location} LIKE concat('%', #{keyword}, '%') OR ${location_detail} LIKE concat('%', #{keyword}, '%')
+		</if>
+		<!-- 동적쿼리(정렬 조건) -->
+		<if test="orderBy != 'none'">
+			ORDER BY ${orderBy} ${orderByDir}
+		</if>	
+	</select>
+	
+	<!-- 전체조회 -->
+	<select id="selectAll" resultType="Board">
+		SELECT * 
+		FROM board
+	</select>
+	
+	<!-- 상세 게시글 조회 -->
+	<select id="selectOne"  resultType="Board" parameterType="int">
+		SELECT * 
+		FROM board
+		WHERE board_id = #{boardId};
+	</select>
+	
+	<!-- 게시글 등록 -->
+	<insert id="insertBoard" parameterType="Board" useGeneratedKeys="true" keyProperty="boardId">
+		INSERT INTO board (user_id, title, content, location, location_detail)
+		VALUES (#{userId}, #{title}, #{content}, #{location}, #{locationDetail});
+	</insert>
+
+	<!-- 게시글 삭제  -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board
+		WHERE board_id = #{boardId};
+	</delete>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE board
+		SET view_cnt = view_cnt+1
+		WHERE board_id = #{boardId};
+	</update>
+	
+	<!-- 게시글 수정 -->
+	<update id="updateBoard" parameterType="Board">
+		UPDATE board
+		SET title = #{title}, content = #{content}, location = #{location}, location_detail = #{locationDetail}
+		WHERE board_id = #{boardId};
+	</update>	
+
+	<!-- 유저 아이디에 맞는 게시글 조회 -->
+	<select id ="selectBoardsByUserId" resultType="Board" parameterType="int">
+		SELECT *
+		FROM board
+		WHERE user_id = #{userId}
+	</select>
+	
+	<!-- 하트 숫자 증가 -->
+	<update id="incrementHeartCount">
+        UPDATE board SET heart_cnt = heart_cnt + 1 WHERE board_id = #{boardId}
+    </update>
+
+	<!-- 하트 숫자 감소 -->
+    <update id="decrementHeartCount">
+        UPDATE board SET heart_cnt = heart_cnt - 1 WHERE board_id = #{boardId}
+    </update>
+
+</mapper>

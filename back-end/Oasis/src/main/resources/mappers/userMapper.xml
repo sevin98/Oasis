@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.oasis.model.dao.UserDao">
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType="User" resultType="User">
+		SELECT id, user_id FROM user
+		WHERE user_id = #{userId} AND password = #{password}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO user (user_id, password, email, age, gender, profile_image)
+		VALUES (#{userId}, #{password}, #{email}, #{age}, #{gender}, #{profileImage})
+	</insert>
+	
+	<!-- 상세 조회 -->
+	<select id="selectOne" parameterType="int" resultType="User">
+		SELECT * FROM user
+		WHERE id = #{id}		
+	</select>
+	
+	<!-- 수정 -->
+	<update id="updateUser" parameterType="User">
+		UPDATE user 
+		SET user_id = #{userId}, email = #{email}, age = #{age}, gender = #{gender}, profile_image = #{profileImage}
+		WHERE id = #{id} 
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM user WHERE id = #{id};
+	</delete>
+	
+	<!-- 아이디 중복확인 -->
+	<select id="selectOneByUserId" parameterType="String" resultType="User">
+		SELECT * FROM user WHERE user_id = #{userId}
+	</select>
+</mapper>

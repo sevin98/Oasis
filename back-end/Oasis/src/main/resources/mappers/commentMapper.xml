@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.oasis.model.dao.CommentDao">
+	
+	<!-- 특정 게시글에 대한 댓글 조회 -->
+	<select id="selectAllByBoardId" parameterType="int" resultType="Comment">
+		SELECT * FROM comment
+		WHERE board_id = #{boardId}
+	</select>
+	
+	<!-- 등록 -->
+	<insert id="insertComment" parameterType="Comment">
+		INSERT INTO comment (board_id, user_id, login_user, content)
+		VALUES (#{boardId}, #{userId}, #{loginUser}, #{content})
+	</insert>
+	
+	<!-- 삭제 -->
+	<delete id="deleteComment" parameterType="int">
+		DELETE FROM comment
+		WHERE comment_id = #{commentId}
+	</delete>
+	
+	<!-- 수정 -->
+	<update id="updateComment" parameterType="Comment">
+		UPDATE comment
+		SET content = #{content}
+		WHERE comment_id = #{commentId}
+	</update>
+	
+	<!-- 댓글 개수 조회 -->
+	<select id="selectAllCntByBoardId" parameterType="int" resultType="int">
+		SELECT count(*) FROM comment
+		WHERE board_id = #{boardId}
+	</select>
+</mapper>

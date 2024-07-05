@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.oasis.model.dao.HeartDao">
+    <select id="getHeart" parameterType="Heart" resultType="Heart">
+        SELECT * FROM heart WHERE board_id = #{boardId} AND user_id = #{userId}
+    </select>
+
+    <insert id="addHeart" parameterType="Heart">
+        INSERT INTO heart (board_id, user_id) VALUES (#{boardId}, #{userId})
+    </insert>
+
+    <delete id="removeHeart" parameterType="Heart">
+        DELETE FROM heart WHERE board_id = #{boardId} AND user_id = #{userId}
+    </delete>
+</mapper>

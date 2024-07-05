@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.oasis.model.dao.ApparelDao">
+
+  <select id="selectOne" resultType="Apparel" parameterType="int">
+    SELECT *
+    FROM apparel
+    WHERE board_id = #{boardId};
+  </select>
+
+  <insert id="insertApparel" parameterType="Apparel">
+    INSERT INTO apparel (board_id, top, `outer`, bottom, shoes)
+    VALUES (#{boardId}, #{top}, #{outer}, #{bottom}, #{shoes});
+  </insert>
+
+  <delete id="deleteApparel" parameterType="int">
+    DELETE FROM apparel
+    WHERE apparel_id = #{id};
+  </delete>
+
+  <update id="updateApparel" parameterType="Apparel">
+    UPDATE apparel
+    SET top = #{top}, `outer` = #{outer}, bottom = #{bottom}, shoes = #{shoes}
+    WHERE board_id = #{boardId};
+  </update>
+
+</mapper>
