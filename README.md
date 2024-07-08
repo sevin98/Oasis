@@ -101,5 +101,6 @@
 ![회원탈퇴](https://github.com/tnwls000/Oasis/assets/117634128/7f5e8148-3a35-4a43-8f07-4c3810ef3ea4)
 
 
-### 전체 시연 영상
+### 전체 시연 영상 📹  ***아래 이미지를 클릭해주세요!***
 [![전체 시연 영상](http://img.youtube.com/vi/XC6j_dGdDJ0/0.jpg)](https://youtu.be/XC6j_dGdDJ0)
+
