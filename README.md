@@ -86,3 +86,20 @@
 
 ## 📹 시연 영상
 
+![메인페이지](https://github.com/tnwls000/Oasis/assets/117634128/5fd51454-7bec-4e7e-912d-1931f017bdb7)
+![메인 Top 3 location](https://github.com/tnwls000/Oasis/assets/117634128/525caf8a-5684-4302-b621-5d4d9ea5e475)
+![회원가입, 로그인](https://github.com/tnwls000/Oasis/assets/117634128/eef4140a-21fe-41c2-b2ef-d0c20b17b7b4)
+![Feeds페이지 검색, 정렬 보여주기](https://github.com/tnwls000/Oasis/assets/117634128/675252e1-3401-48f3-8f97-deec575360a8)
+![Oasis게시글 등록](https://github.com/tnwls000/Oasis/assets/117634128/5cc4226b-eab5-4656-8a4d-49c58a679010)
+![게시글 수정](https://github.com/tnwls000/Oasis/assets/117634128/0a6471d9-0f33-4a66-ba6e-3064f842ecb9)
+![게시글 삭제](https://github.com/tnwls000/Oasis/assets/117634128/bde52088-4e9a-41e6-8804-21b9b0ee8a9a)
+![댓글 등록 및 수정 삭제](https://github.com/tnwls000/Oasis/assets/117634128/75af5bdc-1e1a-4872-9bd2-42a626600c4d)
+![좋아요, 팔로우 기능 시연](https://github.com/tnwls000/Oasis/assets/117634128/515a9d5a-fa92-49d6-b978-1c7dad84ce90)
+![마이페이지 팔로우, 팔로잉, 내 게시글 캐러셀로 보여주기](https://github.com/tnwls000/Oasis/assets/117634128/2526ede9-74eb-449e-b62e-45bfec408f72)
+![프로필 사진 변경](https://github.com/tnwls000/Oasis/assets/117634128/86c888e5-3086-43a7-8a51-0d27ad339f22)
+![프로필 변경](https://github.com/tnwls000/Oasis/assets/117634128/a526b45f-d768-421e-84b1-a9d790cfdf9a)
+![회원탈퇴](https://github.com/tnwls000/Oasis/assets/117634128/7f5e8148-3a35-4a43-8f07-4c3810ef3ea4)
+
+
+### 전체 시연 영상
+[![전체 시연 영상](http://img.youtube.com/vi/XC6j_dGdDJ0/0.jpg)](https://youtu.be/XC6j_dGdDJ0)
