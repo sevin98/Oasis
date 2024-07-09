@@ -1,6 +1,7 @@
 # 🌴 Oas:is(Outfit and Style in Scape)
 <div align="center">
-  ![메인페이지]()
+  
+  ![메인페이지](https://github.com/tnwls000/Oasis/assets/70851874/15bf572c-98c2-4539-a30c-0602b98e9791)
 </div>
 
 ## 👚 프로젝트 소개
@@ -68,7 +69,18 @@
 
 ## 🤔 기획
 ### ERD 다이어그램
+![oasis_erd다이어그램](https://github.com/tnwls000/Oasis/assets/70851874/576714a5-b721-49fa-ae61-94a1862b9326)
+
 ### API 명세서
+
+<details>
+<summary>API 명세서 펼치기</summary>
+<div markdown="1">
+  
+![API명세서](https://github.com/tnwls000/Oasis/assets/70851874/072bb1ba-4c6e-471b-b3f6-bb9e7cf52b70)
+
+</div>
+</details>
 
 ## 🔎 화면 구성
   
