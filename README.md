@@ -1,4 +1,5 @@
 # 🌴 Oas:is(Outfit and Style in Scape)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsevin98%2FOasis&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <div align="center">
   
   ![메인페이지](https://github.com/tnwls000/Oasis/assets/70851874/15bf572c-98c2-4539-a30c-0602b98e9791)
